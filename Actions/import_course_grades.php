@@ -34,9 +34,12 @@
                 // Remove header row 
                 unset($worksheet_arr[0]); 
                 $finalResult = 0;
-                foreach($worksheet_arr as $row)
-                {  
+                
+                $count=0;
+                foreach($worksheet_arr as $row) 
+                {   
                     $student_id = (int)$row[0];
+                    
                     $session_one = $row[3]; 
                     $session_two = $row[4];
                     $enrollment_date = $row[5];

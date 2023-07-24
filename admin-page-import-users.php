@@ -29,8 +29,8 @@ function formToggle(ID){
    $user_dal=new User_DAL();
    $student_dal=new Student_DAL();
 
-     //get all enrolled students
-     $students_info=$student_dal -> getAllStudents();
+    //get all enrolled students
+   $students_info=$student_dal -> getAllStudents();
   ?>
 <div class="main-container d-flex">
         <!--sidebar start-->
@@ -88,7 +88,6 @@ function formToggle(ID){
                                     <td>Student ID</td>
                                     <td>Full Name</td>
                                     <td>Email</td>
-                                    <td>Password</td>
                                     <td>Major</td>
                                     <td>Year</td>
                                     <td>Enrollment Date</td>
@@ -103,7 +102,6 @@ function formToggle(ID){
                                   <td class="p-2"><?php echo $v['StudentId']; ?></td>
                                   <td class="p-2"><?php echo $v['Fname'].' '.$v['Lname']; ?></td>
                                   <td class="p-2"><?php echo $v['Email']; ?></td>
-                                  <td class="p-2"><?php echo $v['Password']; ?></td>
                                   <td class="p-2"><?php $major = $student_dal -> getMajorName($v['Major']); echo $major[0]["Major"]; ?></td>
                                   <td class="p-2"><?php echo $v['Year']; ?></td>
                                   <td class="p-2"><?php echo $v['EnrollmentDate']; ?></td>

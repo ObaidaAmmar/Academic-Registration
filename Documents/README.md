@@ -51,7 +51,6 @@ This project is developed to automate the process of student registration in cou
   - **Students Accounts** :
     - StudentId: 677833 email: obaidaammar99@gmail.com  password: OA99
     - StudentId: 3212 email: amd@gmail.com  password: 1232
-    - StudentId: 109987 email: fsami@gmail.com password: Sami@1
     - StudentId: 109982 email: mohd2001af@gmail.com  password: 12344
     - StudentId: 78675 email: moh@gmail.com  password: 123
     - StudentId: 109656 email: ahmad@gmail.com  password: 12345
