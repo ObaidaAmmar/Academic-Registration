@@ -17,6 +17,19 @@ This project is developed to automate the process of student registration in cou
 - In your project, open a terminal window in vscode and enter the command **composer require phpoffice/phpspreadsheet** , this is used for importing and processing excel files. composer command should be recognized after you have installed it in step 4.
 - After you are done with previous steps, open the browser and search for **http://localhost/academic-registration/index.php** , it must launch the landing page of the project, from which we can go to Login or SignUp page.
 
+#Folders
+- **Academic Registration** , which is the main project folder, it includes all the web pages and other folders.
+- **Actions Folder** , it includes all the APIs or php files that are used to perform operations like **accept/reject user** **import accounts** **import grades** .
+- **classes Folder** , it includes all the DALs (Data Abstraction Layer), which are php files that includes methods to query the database.
+- **css Folder** , it includes cascading style sheets for designing the web pages.
+- **Database Folder** , it includes the database which is used for this project.
+- **Documents Folder** , it includes **Readme file**, **project report**, **project powerpoint**, and a **Diagrams Folder** , it includes ER, Sequence and use case diagrams.
+- **FontAwesome Folder** , it includes webfonts and icons used in this project.
+- **Images Folder** , it includes some University images.
+- **js Folder** , it includes **javascript files** to handle some functionalities as well as performing ajax calls.
+- **templates Folder** , it includes php files that are used across multiple pages like **Login validate** and **permissions** .
+- **vendor Folder** , which is created once we install composer and the required libraries **php mailer and phpspreadsheet** .
+
 #Usage
 - After launching the project **http://localhost/academic-registration/index.php** , a user can go to Login or SignUp page.
 - SignUp page: Mainly admins import students account from the admin page which will be discussed in later steps. However, a student already registered at the Lebanese University - Faculty of Science, can enter his credentials including the ID given to him upon physical registration at the University and request to signup, later on an admin can accept or reject his request based on the credentials enetered. If a student with the same id or email already exist in database the request will not be fulfilled.
