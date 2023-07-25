@@ -37,8 +37,16 @@
         $session2= mysqli_real_escape_string( $conn, $session2 );
         $e_date= mysqli_real_escape_string( $conn, $e_date );
 
+        if($session1 == '' && $session2 == '')
+        {
+          $sql="UPDATE Grades SET Grades.Grade=NULL, Grades.SessionOne = NULL, Grades.SessionTwo = NULL WHERE Grades.StudentId=$studentId AND Grades.CourseId=$courseId AND EnrollmentDate = '$e_date'";
+        }
         if ($session2 == ''){
-          $sql="UPDATE Grades SET Grades.Grade=$courseGrade, Grades.SessionOne = $session1, Grades.SessionTwo = NULL WHERE Grades.StudentId=$studentId AND Grades.CourseId=$courseId AND EnrollmentDate = '$e_date'";
+          $sql="UPDATE Grades SET Grades.Grade=$session1, Grades.SessionOne = $session1, Grades.SessionTwo = NULL WHERE Grades.StudentId=$studentId AND Grades.CourseId=$courseId AND EnrollmentDate = '$e_date'";
+        }
+        else if($session1 == '')
+        {
+          $sql="UPDATE Grades SET Grades.Grade=$session2, Grades.SessionOne = NULL, Grades.SessionTwo = $session2 WHERE Grades.StudentId=$studentId AND Grades.CourseId=$courseId AND EnrollmentDate = '$e_date'";
         }
         else{
           $sql="UPDATE Grades SET Grades.Grade=$courseGrade, Grades.SessionOne = $session1, Grades.SessionTwo = $session2 WHERE Grades.StudentId=$studentId AND Grades.CourseId=$courseId AND EnrollmentDate = '$e_date'";

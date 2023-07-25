@@ -2,8 +2,10 @@
   session_start();
   
   // Include PhpSpreadsheet library autoloader 
-  require_once '../vendor/autoload.php'; 
-  use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
+  require_once '../vendor/autoload.php';
+
+use PhpOffice\PhpSpreadsheet\Calculation\DateTimeExcel\WorkDay;
+use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
 
     
     if(isset($_FILES['file']))
@@ -35,16 +37,16 @@
                 unset($worksheet_arr[0]); 
                 $finalResult = 0;
                 
-                $count=0;
-                foreach($worksheet_arr as $row) 
+                
+               foreach($worksheet_arr as $row) 
                 {   
-                    $student_id = (int)$row[0];
                     
+                    $student_id = (int)$row[0];
                     $session_one = $row[3]; 
                     $session_two = $row[4];
                     $enrollment_date = $row[5];
                     $course_id = (int)$course_dal->getIdFromCode($_POST["course_code_value"]);
-                    
+                  
                     $student_not_found = "";
                     if (!$grade_dal->GradeRowExists($student_id, $course_id, $enrollment_date)){
                         $student_not_found .= "$student_id - ";

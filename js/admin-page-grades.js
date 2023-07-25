@@ -31,8 +31,6 @@ $(document).ready(function(){
       var date=$(this).text();
       enrollDatesArray.push(date);
     });
-    console.log(session1Array);
-    console.log(session2Array);
 
     $.ajax({
       url: "Actions/add_course_grades.php",
